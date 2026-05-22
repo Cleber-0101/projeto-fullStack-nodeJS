@@ -1,0 +1,27 @@
+{
+  "name": "job_finder",
+  "version": "1.0.0",
+  "description": "Portal de vagas ",
+  "keywords": [
+    "dev",
+    "jobs"
+  ],
+  "license": "ISC",
+  "author": "Cleberbatista-desenvolvedor",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body": "^5.1.0",
+    "express": "^5.2.1",
+    "express-handlebars": "^9.0.1",
+    "parser": "^0.1.4",
+    "sequelize": "^6.37.8",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
