@@ -1,12 +1,14 @@
 const express = require('express');
 const app = express();
 // Puxando as informações do banco de dados 
-const db = require('./db/connection')
+const db = require('./db/connection');
+
+const bodyParser = require('body-Parser')
 
 const PORTA = 3000
 
 //escutando 
-app.listen(PORTA, function(){
+app.listen(PORTA, function () {
     console.log(`Estou entrando ${PORTA}`)
 });
 
@@ -16,12 +18,12 @@ db
     .then(() => {
         console.log("Conectou ao banco do sucesso")
     })
-    .catch(err =>{
+    .catch(err => {
         console.log("Ocorreu um erro a se conectar", err)
     })
 
 //Routes
-app.get('/', (req, res) =>{
+app.get('/', (req, res) => {
     res.send("Esta funcionando REST")
 });
 
