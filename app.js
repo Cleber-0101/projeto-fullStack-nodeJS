@@ -2,10 +2,22 @@ const express = require('express');
 const app = express();
 // Puxando as informações do banco de dados 
 const db = require('./db/connection');
+const router = express.Router();
 
-const bodyParser = require('body-Parser')
+const PORTA = 8000
 
-const PORTA = 3000
+app.use((req, res, next) => {
+    console.log('REQ', req.method, req.url, req.headers['content-type']);
+    next();
+});
+
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+//rota teste
+router.get('/teste' , (req,res ) => {
+    res.send("Deu certo")
+})
 
 //escutando 
 app.listen(PORTA, function () {
@@ -27,3 +39,5 @@ app.get('/', (req, res) => {
     res.send("Esta funcionando REST")
 });
 
+app.use('/jobs', require('./routes/jobs'))
+app.use(router);
