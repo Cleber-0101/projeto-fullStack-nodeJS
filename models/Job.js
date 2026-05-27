@@ -1,26 +1,25 @@
-const Sequelize = require('sequelize')
-const db = require('../db/connection')
+const Sequelize = require('sequelize');
+const db = require('../db/connection');
 
-// define usado para criar tabela no banco de dados
 const Job = db.define('job', {
-    titulo: {
-        type: Sequelize.STRING,
-    },
-    descricao: {
-        type: Sequelize.STRING,
-    },
-    salario: {
-        type: Sequelize.STRING,
-    },
-    compania: {
-        type: Sequelize.STRING,
-    },
-    email: {
-        type: Sequelize.STRING,
-    },
-    novo_trabalho: {
-        type: Sequelize.INTEGER
-    }
-})
+  title: {
+    type: Sequelize.STRING,
+  },
+  description: {
+    type: Sequelize.STRING,
+  },
+  salary: {
+    type: Sequelize.STRING,
+  },
+  company: {
+    type: Sequelize.STRING,
+  },
+  email: {
+    type: Sequelize.STRING,
+  },
+  new_job: {
+    type: Sequelize.INTEGER,
+  }
+});
 
 module.exports = Job
